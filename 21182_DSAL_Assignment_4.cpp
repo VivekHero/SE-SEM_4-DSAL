@@ -109,11 +109,11 @@ public:
 			index %= size;
 			count++;
 			 if(index==temp){
-					cout << "The telephone number " << t << " is not found" << endl;
-					count = 0;
-					cout << "The number of comparisons made to search " << t << " are " << count << endl;
+				cout << "The telephone number " << t << " is not found" << endl;
+				count = 0;
+				cout << "The number of comparisons made to search " << t << " are " << count << endl;
 
-					return;
+				return;
 			}
 		}
 		cout << "The telephone number " << data[index].telephone<<" found at index " << index << endl;
