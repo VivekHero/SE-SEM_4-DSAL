@@ -1,3 +1,11 @@
+//============================================================================
+// Name        : Assignment_6.cpp
+// Author      : Vivek Gotecha
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
 #include <iostream>
 #include <string>
 #include <vector>
