@@ -58,7 +58,7 @@ void Graph::displaygraph(){
 		cout << endl;
 		for (j = 0; j < n; j++){
 			if (j == 0){
-				cout << cities[i] << "\t";
+				cout << cities[i] << "->" << "\t";
 			}
 			cout << data[i][j] << "\t";
 		}
