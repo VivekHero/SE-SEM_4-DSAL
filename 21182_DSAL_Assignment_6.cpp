@@ -130,7 +130,7 @@ class Queue{
 
     bool search(string data){
         Node* temp = front;
-        while (front != rear){
+        while (temp != rear){
             if (temp->data == data){
                 return true;
             }
