@@ -33,8 +33,6 @@ public:
 
 	void insert_at_end(string k, string v){
 		HashNode *newNode = new HashNode(k, v);
-		cout << "key = " << newNode->key<< endl;
-		cout << "value = " << newNode->value<< endl;
 		if (head == NULL){
 			head = newNode;
 		}
