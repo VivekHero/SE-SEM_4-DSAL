@@ -112,11 +112,13 @@ class Queue{
             Node* temp = front;
             front = NULL;
             rear = NULL;
+            temp->right = NULL;
             return temp;
         }
         else{
             Node* temp = front;
             front = front->right;
+            temp->right = NULL;
             return temp;
         }
     }
