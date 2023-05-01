@@ -336,7 +336,7 @@ class Graph{
             cout << "2 - Display landmarks" << endl;
             cout << "3 - DFS" << endl;
             cout << "4 - BFS" << endl;
-            cout << "5 - Exit" << endl;x
+            cout << "5 - Exit" << endl;
             cout << endl << "Enter choice - " << endl;
             int choice;
             cin >> choice;
