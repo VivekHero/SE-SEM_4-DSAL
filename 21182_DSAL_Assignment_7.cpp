@@ -31,7 +31,7 @@ public:
 
 void Graph::readgraph(){
 	int i,j;
-	for (int i = 0; i < n; i++){
+	for (i = 0; i < n; i++){
 		cout << "Enter the " << i + 1 << " source city : " << endl;
 		cin >> cities[i];
 		for (int j = 0; j < n; j++){
