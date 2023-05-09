@@ -182,7 +182,6 @@ void Graph::choice(){
 }
 
 int main(){
-    EdgeList span;
     Graph g;
     g.choice();
     return 0;
