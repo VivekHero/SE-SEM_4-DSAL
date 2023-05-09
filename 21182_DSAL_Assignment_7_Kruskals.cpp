@@ -67,6 +67,7 @@ void Graph::readgraph(){
     }
 
     for (int i = 0; i < n; i++){
+	cout << endl;
         for (int j = i; j < n; j++){
             if (i == j){
                 G[i][j] = 0;
@@ -87,7 +88,7 @@ void Graph::displaygraph(){
     }
 
     for (int i = 0; i < n; i++){
-        cout << "\n";
+        cout << endl;
         for (int j = 0; j < n; j++){
             if (j == 0){
                 cout << cities[i] << "\t";
@@ -95,6 +96,7 @@ void Graph::displaygraph(){
             cout << G[i][j] << "\t";
         }
     }
+    cout << endl;
 }
 
 int find(int belongs[], int vertexno){
