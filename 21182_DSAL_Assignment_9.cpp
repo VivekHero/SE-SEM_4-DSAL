@@ -56,7 +56,10 @@ public:
 		else{
 			rh = 1 + temp->right->ht;
 		}
-		return (lh - rh);
+		if (lh > rh){
+			return lh;
+		}
+		return rh;
 	}
 
 	int balanceFactor(Node *temp){
