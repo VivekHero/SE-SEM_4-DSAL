@@ -136,10 +136,9 @@ public:
 };
 
 class BinaryTree{
-public:
-	Node *root;
 
 public:
+	Node *root;
 	// Recursive 1
 	Node *buildTree(Node *root){
 		int data;
@@ -198,11 +197,6 @@ public:
 		copy->right = copytree(root->right);
 		return copy;
 	}
-
-//	Node * operator = (Node *root){
-//		root = copytree(root);
-//		return root;
-//	}
 
 	Node *operator = (BinaryTree &obj){
 		obj.root = this->root;
