@@ -145,8 +145,7 @@ class Queue{
 
 class Graph{
     public:
-    Node* head;
-    public:
+    Node *head;
     Graph(){
         head = NULL;
     }
