@@ -176,6 +176,7 @@ int main(){
 		cout << "2. Display records" << endl;
 		cout << "3. Search record" << endl;
 		cout << "4. Delete a record" << endl;
+		cout << "5. Exit" << endl;
 		cout << "Enter your choice" << endl;
 		cin >> choice;
 		switch(choice){
