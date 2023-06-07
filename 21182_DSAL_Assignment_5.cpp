@@ -97,7 +97,6 @@ public:
 					}
 					i++;
 					temp = temp->next;
-					//this block is added by me
 					if (temp->key == k){
 						cout << "If Key = " << k << " is present then it will be stored in Hash Table Bucket = "<< index + 1 << endl;
 						cout << "Item found at location : " << i + 1 << endl;
