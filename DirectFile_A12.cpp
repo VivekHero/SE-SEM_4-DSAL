@@ -18,6 +18,16 @@ class HashTable{
     int Hash(int);
     void insertHT(int, int);
     int searchHT();
+    void deleteHT();
+
+    void setEmpId(){
+        cin >> empId;
+    }
+
+    int getEmpId(){
+        return empId;
+    }
+
 }HT[10];
 
 class DirectFile{
@@ -41,6 +51,7 @@ class DirectFile{
     void writeFile();
     void readFile();
     void searchRecord();
+    void deleteRecord();
 };
 
 void HashTable::createHT(){
@@ -112,6 +123,35 @@ int HashTable::searchHT(){
 
 }
 
+void HashTable::deleteHT(){
+    int empId;
+    int index,tableSize = 10;
+    cout << "Enter the employee id to be deleted" << endl;
+    setEmpId();
+
+    index = Hash(empId);
+
+    if (HT[index].empId == getEmpId()){
+        HT[index].empId = 0;
+        HT[index].location = -1;
+    }
+    else{
+        int temp = index;
+        do{
+            index++;
+            index = index % tableSize;
+            if (index == temp){
+                cout << "The record to be deleted is not found" << endl;
+            } 
+        }while(HT[index].empId != getEmpId());
+
+        HT[index].empId = 0;
+        HT[index].location = -1;
+    }
+
+}
+
+
 void DirectFile::writeFile(){
     file.open(fname, ios::out);
 
@@ -155,6 +195,42 @@ void DirectFile::searchRecord(){
     file.close();
 }
 
+void DirectFile::deleteRecord(){
+    file.open(fname, ios::in);
+    fstream temp;
+    temp.open("tmp.txt", ios::out);
+    if (!file){
+        cout << "Error in Opening File" << endl;
+    }
+    else{
+        fstream temp;
+        temp.open("tmp.txt", ios::out);
+        int flag = 0;
+        HT.deleteHT();
+     
+        while (!file.eof()){
+            file.getline(buffer, 40);
+            int comp = int(((buffer[0] - 48)*10 + (buffer[1] - 48) ));
+            if (comp == HT.getEmpId()){
+                cout << "Record deleted successfully" << endl;
+                flag = 1;
+            }
+            else{
+                temp << buffer << endl;
+            }
+        }
+
+        if (flag == 0){
+            cout << "Record do be deleted not found " << endl;
+        }
+    }
+
+    file.close();
+    temp.close();
+    remove(fname);
+    rename("tmp.txt", fname);
+}
+
 void DirectFile::readFile(){
     file.open(fname, ios::in);
     if (!file){
@@ -183,6 +259,8 @@ int main()
         cout << "1. Write in the file" << endl;
         cout << "2. Read from the file" << endl;
         cout << "3. Search in the file" << endl;
+        cout << "4. Delete a record from file" << endl;
+        cout << "5. Exit" << endl;
         cout << "Enter your choice" << endl;
         cin >> choice;
         switch(choice){
@@ -199,6 +277,11 @@ int main()
                 break;
             }
             case 4:{
+                file.deleteRecord();
+                file.readFile();
+                break;
+            }
+            case 5:{
                 cout << "Thank you for visiting" << endl;
                 exit(0);
                 break;
@@ -207,8 +290,7 @@ int main()
                 cout << "You have entered wrong choice" << endl;
             }
         }
-    }while (choice != 4);
+    }while (choice != 5);
 	
-
 	return 0;
 }
