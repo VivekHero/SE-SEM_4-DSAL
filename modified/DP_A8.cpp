@@ -169,15 +169,54 @@ class OBST{
     }
 
     void check(){
+        cout << "Inorder - " << endl;
         inorder(tree);
+        
         cout << endl;
+        
+        cout << "Preorder - " << endl; 
         preorder(tree);
+        
+        cout << endl;
     }
 };
 
 int main(){
     OBST obj;
-    obj.input();
-    obj.create();
-    obj.check();
+    int choice;
+    
+    do{
+        cout << "----- MENU -----" << endl;
+        cout << "1. Input keys and corresponding probabilties" << endl;
+        cout << "2. Create OBST" << endl;
+        cout << "3. Display the inorder and preorder of OBST" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice" << endl;
+        cin >> choice;
+        
+        switch(choice){
+            case 1:{
+                obj.input();
+                break;
+            }
+            case 2:{
+                obj.create();
+                break;
+            }
+            case 3:{
+                obj.check();
+                break;
+            }
+            case 4:{
+                cout << "Thank you for visiting" << endl;
+                exit(0);
+                break;
+            }
+            default:{
+                cout << "Invalid choice entered" << endl;
+            }
+        }
+    }while(choice != 4);
+    
+    return 0;
 }
