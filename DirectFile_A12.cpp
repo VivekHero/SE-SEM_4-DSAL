@@ -142,6 +142,7 @@ void HashTable::deleteHT(){
             index = index % tableSize;
             if (index == temp){
                 cout << "The record to be deleted is not found" << endl;
+                break;
             } 
         }while(HT[index].empId != getEmpId());
 
@@ -153,7 +154,7 @@ void HashTable::deleteHT(){
 
 
 void DirectFile::writeFile(){
-    file.open(fname, ios::out);
+    file.open(fname, ios::app);
 
     if (!file){
            cout << "Error in Opening File" << endl;
@@ -218,10 +219,6 @@ void DirectFile::deleteRecord(){
             else{
                 temp << buffer << endl;
             }
-        }
-
-        if (flag == 0){
-            cout << "Record do be deleted not found " << endl;
         }
     }
 
