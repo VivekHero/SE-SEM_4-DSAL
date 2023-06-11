@@ -128,7 +128,8 @@ void HashTable::deleteHT(){
     int index,tableSize = 10;
     cout << "Enter the employee id to be deleted" << endl;
     setEmpId();
-
+    empId = getEmpId();
+	
     index = Hash(empId);
 
     if (HT[index].empId == getEmpId()){
