@@ -30,19 +30,23 @@ public:
 };
 
 void Graph::readgraph(){
-	int i,j;
-	for (i = 0; i < n; i++){
-		cout << "Enter the " << i + 1 << " source city : " << endl;
-		cin >> cities[i];
-		for (int j = 0; j < n; j++){
-			cout << "Enter the " << j + 1 << " destination city : " << endl;
-			cin >> cities[j];
-			cout << endl << "Enter the cost between cities: ";
-			cin >> data[i][j];
-		}
-	}
-}
+    cout << "Enter names of cities" << endl;
+    for (int i = 0; i < n; i++){
+        cin >> cities[i];
+    }
 
+    for (int i = 0; i < n; i++){
+	cout << endl;
+        for (int j = i; j < n; j++){
+            if (i == j){
+                data[i][j] = 0;
+            }
+            cout << "\nEnter cost to connect " << cities[i] << " and " << cities[j] << " : ";
+            cin >> data[i][j];
+            data[j][i] = data[i][j];
+        }
+    }
+}
 
 void Graph::displaygraph(){
 	int i,j;
